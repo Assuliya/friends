@@ -1,0 +1,19 @@
+<h3>View Users</h3>
+<label>Search by Date:</label>
+<input type='text' ng-model='search'>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Birth Date</th>
+    <th>Show</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr ng-repeat="friend in friends | filter:search">
+    <td><a href='#/friends/{{friend._id}}'>{{ friend.first_name }} {{ friend.last_name }}</a></td>
+
+    <td><a href='#/friends/{{friend._id}}/edit'>Edit</a></td>
+    <td><button ng-click = 'delete(friend._id)'>Delete</button></td>
+  </tr>
+</table>
+<a href="#/new">New Friend</a>
